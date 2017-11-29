@@ -1,6 +1,6 @@
 #!/bin/sh
-STR1='echo a'
-STR2='ls -a'
+STR1='echo -e asdf'
+STR2='test -d ../bin'
 STR3='echo b;'
 STR4='exit'
 echo "Single Command Tests"

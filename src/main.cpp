@@ -15,6 +15,7 @@ int main() {
         commander.CS.V.clear();
         reader.display();
         commander.setCS(reader.CS); 
-        exit = commander.execute();
+        commander.execute(commander.CS);
+        exit = commander.get_ex();
     }
 }

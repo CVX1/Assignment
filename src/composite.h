@@ -25,7 +25,9 @@ class Instruction {
 class Command : public Instruction {
     public:
         Command() {}
-        Command(char* s) : Instruction(s) {};
+        Command(char* s) : Instruction(s) {
+        
+        };
         ~Command() {}
         /*
         void execute() {
@@ -45,6 +47,7 @@ class Connector : public Instruction {
             if (strcmp(s, ";") == 0) {exec = true;}
             else if (strcmp(s, "&&") == 0) {exec = true;}
             else if (strcmp(s, "||") == 0) {exec = false;}
+            else {exec = true;}
         }
         ~Connector() {
         
@@ -60,7 +63,12 @@ class CmdString : public Instruction {
         vector<Instruction*> V;
 
         CmdString() {}
-
+        ~CmdString() {
+            for (int i = 0; i < V.size(); i++) {
+                V[i] = NULL;
+                delete V[i];
+            }
+        }
         void addInstruction(Instruction* i) {
             V.push_back(i);
         }
