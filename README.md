@@ -25,7 +25,7 @@ This will require using the Unix functions dup and pipe . You can find help on h
 ```
 $ cat < existingInputFile | tr A-Z a-z | tee newOutputFile1 | tr a-z A-Z > newOutputFile2 
 ```
-IMPORTANT : This is a necessary but not sufficient test case. You must come up with others on your own. Bash has an extensive syntax for redirection, and you are not required to implement all of it. But if you're curious, see the [linux documentation project's bash io-redirection tutorial for details]
+IMPORTANT : This is a necessary but not sufficient test case. You must come up with others on your own. Bash has an extensive syntax for redirection, and you are not required to implement all of it. But if you're curious, see the [linux documentation project's bash io-redirection tutorial for details](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
 
 
