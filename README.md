@@ -15,7 +15,13 @@ The first issue each member decides to work on should be moved to the ‘In Prog
 
 ### Coding Requirements 
 
-Extend your rshell program so that it properly handles input redirection < , output redirection > and >> , and piping | . This will require using the Unix functions dup and pipe . You can find help on how to use these functions in the man pages. As an example, after this assignment, your program should be able to successfully handle the following command: 
+Extend your rshell program so that it properly handles 
+* input redirection - "<" 
+* output redirection - ">" (replacing)
+* output redirection - ">>" (adding)
+* piping "|"
+
+This will require using the Unix functions dup and pipe . You can find help on how to use these functions in the man pages. As an example, after this assignment, your program should be able to successfully handle the following command: 
 ```
 $ cat < existingInputFile | tr A-Z a-z | tee newOutputFile1 | tr a-z A-Z > newOutputFile2 
 ```
