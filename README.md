@@ -19,7 +19,7 @@ Extend your rshell program so that it properly handles
 * input redirection - "<" 
 * output redirection - ">" (replacing)
 * output redirection - ">>" (adding)
-* piping "|"
+* piping - "|"
 
 This will require using the Unix functions dup and pipe . You can find help on how to use these functions in the man pages. As an example, after this assignment, your program should be able to successfully handle the following command: 
 ```
