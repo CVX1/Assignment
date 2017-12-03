@@ -1,5 +1,3 @@
-#ifndef __COMMANDER_CPP__
-#define __COMMANDER_CPP__
 #include "commander.h"
 
 //--------------------------------------------------------------------------
@@ -300,5 +298,3 @@ bool Commander::execute(CmdString cs) {
     cs.V.clear();
     return result;
 }
-
-#endif //__COMMANDER_CPP__
