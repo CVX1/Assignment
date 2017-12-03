@@ -1,6 +1,3 @@
-#ifndef __READER_CPP__
-#define __READER_CPP__
-
 //--------------------------------------------------------------------------
 // Reader Class
 //--------------------------------------------------------------------------
@@ -18,12 +15,12 @@ Command* Reader::createCommand(char* str) {
             Command* cmd = new Command();
             cmd->setString(str);
             return cmd;
-        };
+};
 
 Connector* Reader::createConnector(char* str) {
             // create Connector //
             return new Connector(str);
-        };
+};
 
 // reads input, parses input, calls create function //
 
@@ -172,5 +169,3 @@ void Reader::display() {
     cout << "$ ";
     read();
 }
-
-#endif // __READER_CPP__
