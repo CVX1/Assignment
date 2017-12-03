@@ -12,23 +12,21 @@ class Instruction {
         char* str;
         bool exec;
 
-        Instruction() {exec = false;}
-        Instruction(char* s) {str = s;}
+        Instruction();
+        Instruction(char* s);
 
         //virtual void execute() = 0;
     
-        void setString(char* s) {str = s;}
+        void setString(char* s);
 
         virtual void print() = 0;
 };
 
 class Command : public Instruction {
     public:
-        Command() {}
-        Command(char* s) : Instruction(s) {
-        
-        };
-        ~Command() {}
+        Command();
+        Command(char* s);
+        ~Command();
         /*
         void execute() {
             // execute using execvp and vipid //
@@ -37,21 +35,14 @@ class Command : public Instruction {
             
         }
         */
-        void print() {cout << str << " ";}
+        void print();
 };
 
 class Connector : public Instruction {
     public:
-        Connector() {}
-        Connector(char* s) : Instruction(s) {
-            if (strcmp(s, ";") == 0) {exec = true;}
-            else if (strcmp(s, "&&") == 0) {exec = true;}
-            else if (strcmp(s, "||") == 0) {exec = false;}
-            else {exec = true;}
-        }
-        ~Connector() {
-        
-        }
+        Connector();
+        Connector(char* s);
+        ~Connector();
 
         //void execute() {}
 
@@ -62,26 +53,14 @@ class CmdString : public Instruction {
     public:
         vector<Instruction*> V;
 
-        CmdString() {}
-        ~CmdString() {
-            for (int i = 0; i < V.size(); i++) {
-                V[i] = NULL;
-                delete V[i];
-            }
-        }
-        void addInstruction(Instruction* i) {
-            V.push_back(i);
-        }
+        CmdString();
+        ~CmdString();
+        void addInstruction(Instruction* i);
 
         //void execute() {}
         
-        void print() {
-            for (unsigned int i = 0; i < V.size(); i++) {
-                V[i]->print();
-                cout << endl;
-            }
-        }
+        void print();
 };
 
 
-#endif // __COMPOSITE_H__
+#endif //__COMPOSITE_H__
