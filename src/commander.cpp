@@ -13,7 +13,7 @@ bool Commander::runNext(bool exec, Instruction* conn) {
                 return true;
             else
                 return false;
-        }
+}
 
 void Commander::setCS(CmdString cs) {CS = cs;}
 
